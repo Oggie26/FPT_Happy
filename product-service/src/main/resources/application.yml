@@ -1,0 +1,37 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: product-service
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+
+  datasource:
+    # url: jdbc:postgresql://product-db:5432/product_db
+    url: jdbc:postgresql://localhost:5432/product_db
+    username: postgres
+    password: 123456
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+jwt:
+  secret: 9f932d15-6d6a-44d1-ada2-37436d260e1d
+  expiration: 3600000 # 1 hour in ms
+
+
+
+eureka:
+  client:
+    service-url:
+#      defaultZone: http://eureka-server:8761/eureka
+       defaultZone: http://localhost:8761/eureka
+
